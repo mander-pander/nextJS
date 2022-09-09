@@ -1,15 +1,17 @@
 import { Box, Text, Flex } from "@chakra-ui/layout";
 import { Image } from "@chakra-ui/react";
 import GradientLayout from "../components/gradientLayout";
+import { useMe } from "../lib/hooks";
 import prisma from "../lib/prisma";
 
 const Home = ({ artists }) => {
+  const { user } = useMe();
   return (
     <GradientLayout
       roundImage
       color="purple"
       subtitle="profile"
-      title="mander-pander"
+      title={`${user?.firstName} ${user?.lastName}`}
       description="public playlists"
       image="https://img.freepik.com/premium-vector/baby-panda-waving-paw-cartoon_42750-612.jpg?w=2000"
     >
