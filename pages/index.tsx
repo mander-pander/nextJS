@@ -12,7 +12,7 @@ const Home = ({ artists }) => {
       color="purple"
       subtitle="profile"
       title={`${user?.firstName} ${user?.lastName}`}
-      description="public playlists"
+      description={`${user?.playlistsCount} public playlists`}
       image="https://img.freepik.com/premium-vector/baby-panda-waving-paw-cartoon_42750-612.jpg?w=2000"
     >
       <Box color="white" paddingX="40px">
