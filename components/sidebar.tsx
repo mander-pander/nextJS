@@ -6,7 +6,6 @@ import {
   ListItem,
   ListIcon,
   Divider,
-  Center,
   LinkBox,
   LinkOverlay,
 } from "@chakra-ui/layout";
@@ -112,7 +111,13 @@ const Sidebar = () => {
             {playlists.map((playlist) => (
               <ListItem paddingX="20px" key={playlist.id}>
                 <LinkBox>
-                  <NextLink href="/" passHref>
+                  <NextLink
+                    href={{
+                      pathname: "/playlist/[id]",
+                      query: { id: playlist.id },
+                    }}
+                    passHref
+                  >
                     <LinkOverlay>{playlist.name}</LinkOverlay>
                   </NextLink>
                 </LinkBox>
